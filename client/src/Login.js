@@ -1,13 +1,22 @@
-import React, { useState } from 'react'
-
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from "react-router-dom";
 function Login() {
+    let nav= useNavigate()
+    let state=false
     const [username, setUsername]=useState("")
     const [password, setPassword]= useState('')
     const handleSubmit=(e)=>{
         e.preventDefault()
         console.log("Okay")
-      
-        fetch("http://127.0.0.1:3000/login",{method:"POST", headers:{"accept":"application/json", "accept":"application/json"}, body:JSON.stringify(username)}).then(res=>res.json()).then(data=>console.log(data))
+     fetch("http://127.0.0.1:3000/login",{method:"POST", headers:{"accept":"application/json", "accept":"application/json"}, body:JSON.stringify(username)}).then(res=>{
+     if(res.ok){
+        state=true
+      return   res.json()   
+     }   
+     }).then(data=>console.log(data))
+     if (state===true){
+        nav('/home')
+     }
     }
   return (
     <div>
