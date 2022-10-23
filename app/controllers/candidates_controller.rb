@@ -4,7 +4,7 @@ class CandidatesController < ApplicationController
     candidates=Candidate.all
     render json: candidates, include: :resume
     end
-    def show 
+def show 
         candidate=Candidate.find_by(id:params[:id])
         if candidate
         render json: candidate
