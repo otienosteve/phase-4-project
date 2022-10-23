@@ -8,6 +8,8 @@ class CreateCandidates < ActiveRecord::Migration[6.1]
       t.string :gender
       t.string :contact
       t.string :email
+      t.integer :resume_id
+      t.integer :job_post_id
 
       t.timestamps
     end
