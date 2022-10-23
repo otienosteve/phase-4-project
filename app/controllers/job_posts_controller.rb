@@ -1,19 +1,20 @@
 class JobPostsController < ApplicationController
     
     def index
-        jobs= Job.all
+        jobs= JobPost.all
         render json:jobs
         end
         def show 
-        comp=job.find_by(params[:id])
+        comp=JobPost.find_by(params[:id])
         render json: comp
         end
     def create
-    comp=job.create!(job_params) 
+        
+    comp=JobPost.create!(job_params) 
     render json: comp
     end
         def update
-            comp=job.find_by(id:params[:id])
+            comp=JobPost.find_by(id:params[:id])
             if comp
             comp.update(job_params)
             render json: comp 
@@ -22,7 +23,7 @@ class JobPostsController < ApplicationController
             end
         end
         def destroy 
-        comp= job.find_by(id: params[:id])
+        comp= JobPost.find_by(id: params[:id])
         if comp
             comp.destroy
             render json: {error: "job Deleted Succesfully"}
@@ -32,7 +33,7 @@ class JobPostsController < ApplicationController
     end
         private 
         def job_params
-        params.permit(:job_name,:contact_person,:company_contact,:company_adress,:company_email,:company_detail,:job_post_id)
+        params.permit(:company_id,:job_title,:post,:no_vacancy,:start_date,:candidate_id)
         end
 
 end

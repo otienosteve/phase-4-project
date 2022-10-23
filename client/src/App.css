@@ -12,6 +12,19 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.row{
+  padding:10%;
+}
+input[type=submit]{
+  border: 2px solid green;
+  border-radius:10px;
+  background-color: transparent;
+  color:green
+}
+.col-md-5{
+  background-color: grey;
+  color:blue;
+}
 
 .App-header {
   background-color: #282c34;

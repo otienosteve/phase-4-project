@@ -8,6 +8,7 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './Home';
+import SingleJob from './SingleJob';
 
 function App() {
   return ( <>
@@ -15,6 +16,7 @@ function App() {
   <Routes>
     <Route path="/" element={<Login />} />
 <Route path="/home" element={<Home />}/>
+<Route path="/single/:id" element={<SingleJob/>}/>
     </Routes>
   </>
  

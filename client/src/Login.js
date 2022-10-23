@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 function Login() {
     let nav= useNavigate()
     let state=false
@@ -19,7 +20,9 @@ function Login() {
      }
     }
   return (
-    <div>
+    <div className='row'>
+        <div className="col-md-4">
+<h4>Wining Bread Job Agency</h4>
         <h3>Login</h3>
         <form onSubmit={handleSubmit}>
 <label htmlFor="username">Username</label>
@@ -30,9 +33,12 @@ function Login() {
  <input type="submit" value="Login" />
 
         </form>
+        <h5>Not a member Sign Up </h5>
+        </div>
 
 
     </div>
+    
   )
 }
 
