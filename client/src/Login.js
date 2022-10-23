@@ -33,7 +33,7 @@ function Login() {
  <input type="submit" value="Login" />
 
         </form>
-        <h5>Not a member Sign Up </h5>
+        <h5>Not a member <Link to="/signup">Sing Up</Link></h5>
         </div>
 
 
